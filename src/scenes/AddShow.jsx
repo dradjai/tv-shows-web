@@ -1,5 +1,9 @@
 import { useState } from "react"
 import { useNavigate, userNavigate } from "react-router-dom";
+import { Form } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function AddShow({ setShows }) {
 
@@ -28,33 +32,78 @@ export default function AddShow({ setShows }) {
       })
       .catch(alert)
   }
-
+ 
   return(
     <>
-      <h2>AddShow</h2>
-      <form onSubmit={handleAddShow}>
-        <label htmlFor="title">Title 
-          <input
-            type="text"
-            value={title}
-            onChange={ (e) => {setTitle(e.target.value)}} />
-        </label>
+    
+      <header>
+        <Header/>
+      </header>
+        
+        <Form onSubmit={handleAddShow} className="add-show"> 
+          <h2>Add a show</h2>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Title</Form.Label>
+            <Form.Control 
+              type="text" 
+              placeholder="Enter Title" 
+              value={title}
+              onChange={ (e) => {setTitle(e.target.value)}}
+                />
+          </Form.Group>
 
-        <label htmlFor="poster">Poster 
-          <input
-            type="text"
-            value={poster}
-            onChange={ (e) => {setPoster(e.target.value)}} />
-        </label>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Poster</Form.Label>
+            <Form.Control 
+              type="text" 
+              placeholder="Enter Poster" 
+              value={poster}
+              onChange={ (e) => {setPoster(e.target.value)}}/>
+          </Form.Group>
 
-        <label htmlFor="seasons">Seasons 
-          <input
-            type="text"
-            value={seasons}
-            onChange={ (e) => {setSeasons(e.target.value)}} />
-        </label>
-        <input type="submit" value="Add Show" />
-      </form>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Seasons</Form.Label>
+            <Form.Control 
+              type="text" 
+              placeholder="Enter Seasons" 
+              value={seasons}
+              onChange={ (e) => {setSeasons(e.target.value)}}/>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Check me out" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+      </Form>
+        
+        <footer>
+          <Footer/>
+        </footer>
     </>
   )
 }
+
+        // <form onSubmit={handleAddShow}>
+        //   <label htmlFor="title">Title 
+        //     <input
+        //       type="text"
+        //       value={title}
+        //       onChange={ (e) => {setTitle(e.target.value)}} />
+        //   </label>
+          
+        //   <label htmlFor="poster">Poster 
+        //     <input
+        //       type="text"
+        //       value={poster}
+        //       onChange={ (e) => {setPoster(e.target.value)}} />
+        //   </label>
+        
+        //   <label htmlFor="seasons">Seasons 
+        //     <input
+        //       type="text"
+        //       value={seasons}
+        //       onChange={ (e) => {setSeasons(e.target.value)}} />
+        //   </label>
+        //   <input type="submit" value="Add Show" />
+        // </form>

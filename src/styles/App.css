@@ -1,3 +1,38 @@
+body {
+  background-image: url(/public/images/hollywood.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-login {
+  width: 40%;
+  padding-bottom: 30%;
+  margin-left: 25%;
+  
+}
+.form-signup {
+  width: 40%;
+  padding-bottom: 30%;
+  margin-left: 25%;
+  
+}
+
+.add-show {
+  width: 40%;
+  padding-bottom: 30%;
+  margin-left: 25%;
+}
+
+.nav-bar {
+  background-color: lightgrey;
+}
+
+h2, p {
+  color: white;
+ 
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
